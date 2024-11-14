@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgottsch <lgottsch@student.42prague.com    +#+  +:+       +#+        */
+/*   By: Watanudon <Watanudon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 17:10:31 by lgottsch          #+#    #+#             */
-/*   Updated: 2024/11/13 16:58:58 by lgottsch         ###   ########.fr       */
+/*   Updated: 2024/11/14 17:38:16 by Watanudon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@
 //#include <fcntl.h> //permissions open()
 
 //pipex.c
+int     check_in(char *file);
+
+//children.c
+void    kid1(int fd0, int fd1, char *argv[], char *envp[]);
+void    kid2(int fd0, int fd1, char *argv[], char *envp[]);
+
+
+//execute.c
+char    **get_path(char *envp[]);
+char    *get_exec_path(char *cmd, char **path);
+void    exec_cmd(char *cmd, char *envp[]);
+
 
 
 //pipex_help.c
